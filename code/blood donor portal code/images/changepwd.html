@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE> New Document </TITLE>
+  <META NAME="Generator" CONTENT="EditPlus">
+  <META NAME="Author" CONTENT="">
+  <META NAME="Keywords" CONTENT="">
+  <META NAME="Description" CONTENT="">
+  <SCRIPT language=JavaScript>
+	function swapImage()
+	{
+		theImages = new Array();
+		theImages[0]="image01.jpg";
+		theImages[1]="image02.jpg";
+		theImages[2]="image03.jpg";
+		theImages[3]="image04.jpg";
+		theImages[4]="image05.jpg";
+		theImages[5]="image06.jpg";
+		theImages[6]="image07.jpg";
+		theImages[7]="image08.jpg";
+		theImages[8]="image09.jpg";
+		theImages[9]="image10.jpg";
+		theImages[10]="image11.jpg";
+		theImages[11]="image12.jpg";
+		theImages[12]="image13.jpg";
+		theImages[13]="image14.jpg";
+		theImages[14]="image15.jpg";
+		theImages[15]="image16.jpg";
+		theImages[16]="image17.jpg";
+		theImages[17]="image18.jpg";
+		theImages[18]="image19.jpg";
+		theImages[19]="image20.jpg";
+		theImages[20]="image21.jpg";
+		theImages[21]="image22.jpg";
+		theImages[22]="image23.jpg";
+		theImages[23]="image24.jpg";
+		theImages[24]="image25.jpg";
+		theImages[25]="image26.jpg";
+		theImages[26]="image27.jpg";
+		var path="images/userauth/";
+		whichImage = Math.floor(Math.random()*theImages.length);
+		var filename=theImages[whichImage];
+		var urlpath=path+filename;
+		document.write('<IMG SRC="'+urlpath+'" value="'+filename+'" name="image">');
+		return filename;
+	}
+  </SCRIPT>
+  </HEAD>
+  <BODY>
+  <form action="check.jsp">
+	<SCRIPT language=JavaScript>
+		swapImage();
+	</SCRIPT>
+	<input type="submit" value=" Click ">
+  </form>
+  </BODY>
+</HTML>

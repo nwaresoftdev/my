@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="style.css" media="screen" />
+	<link rel="shortcut icon" type="image/png" href="images/bd.png">
+	<TITLE>Blood Donor Web Portal</TITLE>
+</head>
+<%@ page import="java.util.*"%>
+<%@ include file="removecache.jsp"%>
+<%
+	String user=null;
+	String changepwd="";
+	String pwdurl=null;
+	String login="Login";
+	String authurl="";
+	String usrname="";
+	String seperator=""; %>
+	<%
+ /*	Enumeration enm=session.getAttributeNames();
+	if(enm.hasMoreElements())
+	{
+		user=(String)session.getAttribute("user");
+		if(user.equals("null"))
+		{
+		}
+		else
+		{
+			seperator="&nbsp;|&nbsp;";
+			changepwd="Change&nbspPassword";
+			login="Logout";
+			authurl="logout.jsp";
+			pwdurl="pwdchange.jsp";
+			usrname="Welcome <u><font color='red'>"+user+"</font></u>";
+		}
+	} */
+%>
+<body>
+	<div align="left">
+		<table width="1020" align="center" bor>
+			<tr>
+				<td width="108" rowspan="3"><img src="images/bd_Logo.png" alt="Blood Donor Logo" width="108" height="83" /></td>
+				<td width="616" height="21"></td>
+				<td width="150" align="right"><a href="<%=pwdurl%>"><%=changepwd%></a></td>
+				<td width="17"><%=seperator%></td>
+				<td width="17" align="right"><a href=""></a></td>
+				<td width="11">&nbsp;|&nbsp;</td>
+				  </tr>
+		   <tr>
+				<td height="41" colspan="9">&nbsp&nbsp<img src="images/bd_Title.png" alt="Blood Donor Portal." width="429" height="35" /></td>
+		   </tr>
+		   <tr>            
+				<td height="23"><font color="#009933" face="Georgia, Times New Roman, Times, serif" size="4">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp AmeerPet,Hyderabad</font></td>
+                <td  colspan="7" align="right"><font color="#009933" face="Lucida Sans Unicode, Lucida Grande, sans-serif" size="3">
+				<%=usrname%></font></td>
+                <td width="0"></td>
+		   </tr>
+ 		   <tr><td></td></tr>
+           
+		</table>
+	</div>
+	<hr>
+	
+	<div class="line"></div>
+	<br>
+</body>
+</html>

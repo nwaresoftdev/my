@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)chrome-extension://jebcliajfbbfcojpkmkijeeefdknbkad/toolbarUI.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title></title>
+    <link href="chrome-extension://jebcliajfbbfcojpkmkijeeefdknbkad/toolbarUI.css" rel="stylesheet" type="text/css">
+    <link href="chrome-extension://jebcliajfbbfcojpkmkijeeefdknbkad/components/radio/css/toolbar-item.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="chrome-extension://jebcliajfbbfcojpkmkijeeefdknbkad/common/js/common.js"></script>
+    <script type="text/javascript" src="chrome-extension://jebcliajfbbfcojpkmkijeeefdknbkad/common/js/dynamic.js"></script>
+    <script type="text/javascript" src="chrome-extension://jebcliajfbbfcojpkmkijeeefdknbkad/toolbarUI.js"></script>
+</head>
+<body class="aextract-search-icon" id="toolbarBody" onload="(function(){Toolbar.init();})();"><div id="toolbar-item-container" class="mwsToolbar" style="display:block;"><div id="search-area"><button class="toolbar-item button" id="m205320817"><div><img class="icon" src="chrome-extension://jebcliajfbbfcojpkmkijeeefdknbkad/images/205320817.png" width="16"></div></button><input id="searchfor" name="searchfor" type="text" size="25" autocomplete="off"><button class="toolbar-item button" id="m205320758"><div><img class="icon" src="chrome-extension://jebcliajfbbfcojpkmkijeeefdknbkad/images/205320758.png" width="67"></div></button></div><div id="scrollable-area" style="width: 427px; "><div id="scrollable-inner"><button class="toolbar-item button" id="m205320759"><div><img class="icon" src="chrome-extension://jebcliajfbbfcojpkmkijeeefdknbkad/images/205320759.png" width="122"></div></button><button class="toolbar-item button" id="m205400001"><img class="icon" src="chrome-extension://jebcliajfbbfcojpkmkijeeefdknbkad/images/205400001.png" width="16"><span class="label">Be a Santa</span></button><button class="toolbar-item button" id="m205400014"><img class="icon" src="chrome-extension://jebcliajfbbfcojpkmkijeeefdknbkad/images/205400014.png" width="16"><span class="label">Crack My Nuts</span></button><button class="toolbar-item button" id="m205400038"><div><img class="icon" src="chrome-extension://jebcliajfbbfcojpkmkijeeefdknbkad/images/205400038.png" width="16"><span class="label">Games</span></div></button><button class="toolbar-item button" id="m205440867" style="visibility: hidden; "><img class="icon" src="chrome-extension://jebcliajfbbfcojpkmkijeeefdknbkad/images/205440867.png" width="17"><span class="label">Recipes</span></button><button class="toolbar-item button" id="m205400027" style="visibility: hidden; "><div><img class="icon" src="chrome-extension://jebcliajfbbfcojpkmkijeeefdknbkad/images/205400027.png" width="16"><span class="label">Past Holidays</span></div></button><button class="toolbar-item button" id="m205400020" style="visibility: hidden; "><img class="icon" src="chrome-extension://jebcliajfbbfcojpkmkijeeefdknbkad/images/205400020.png" width="16"><span class="label">Facebook</span></button><div class="toolbar-item" id="radioWidget" style="visibility: hidden; ">
+	    <div class="inner-container ">
+		    <!-- Placing buttons on new lines causes there to be a visible space between them -->
+			<button id="radioWidget_togglePlay" class="stopped toggle-play radio"></button><button id="radioWidget_volume" class="volume radio collapsible" onclick="chrome.extension.sendRequest({name: &#39;radioWidget_toggleVolumeDisplay&#39;});"></button><button class="station radio collapsible"><span id="radioWidget_stateIcon" class="ignore-click state-icon radio"></span><span class="station-name">Radio</span></button><button id="radioWidget_toggleDisplay" class="toggle-display radio" onclick="chrome.extension.sendRequest({name: &#39;radioWidget_display&#39;});"></button>
+
+			<input id="radioWidget_volumeSlider" class="hidden radio volume-slider" type="range" value="0.5" min="0.00" max="1.00" step="0.01" onchange="chrome.extension.sendRequest({name: &#39;radioWidget_volume&#39;, volume: Number(this.value)});">
+		</div>
+    </div><button class="toolbar-item button" id="m205400023" style="visibility: hidden; "><img class="icon" src="sunny.png" width="16"><span class="label">47°F New York, NY</span></button></div></div><div id="arrow-container" style="visibility: visible; "><button id="scroll-left" class="scroll left" disabled="undefined"></button><button id="scroll-right" class="scroll right"></button></div></div>
+
+
+
+</body></html>

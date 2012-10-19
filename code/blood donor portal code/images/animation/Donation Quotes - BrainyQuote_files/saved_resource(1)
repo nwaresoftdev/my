@@ -1,0 +1,154 @@
+KRUX.configOnload({
+ "publisher": {
+  "name": "BrainyQuote"
+ },
+ "blocklist": [
+  {
+   "pattern": "\\.simpli\\.fi",
+   "company": "Simpli.fi"
+  }
+ ],
+ "tags": [
+  {
+   "provider_id": 8,
+   "name": "DataLogix provider tag",
+   "format": "0x0",
+   "value": "None",
+   "method": "iframe",
+   "tier": 1,
+   "html": "<script>\r\nKRUX.Provider.datalogix = KRUX.clone(KRUX.Provider.base);\r\nKRUX.Provider.datalogix.id = 'datalogix';\r\nKRUX.Provider.datalogix.checkForNew = 86400 * 7;\r\nKRUX.Provider.datalogix.checkForUpdate = 86400 * 30;\r\nKRUX.Provider.datalogix.httpMethod = 'image';\r\n\r\nKRUX.Provider.datalogix.getUrl = function() {\r\n  return 'http://services.krxd.net/um?' + KRUXHTTP.buildQueryString({\r\n      r: 'http://krxd.nexac.com/dlx.gif',\r\n      _kdpid: '2dd640a6-6ebd-4d4f-af30-af8baa441a0d',\r\n      pid: KRUXSetup.pubid,\r\n      pubid: KRUXSetup.pubid\r\n      // uid: KRUX.Storage.getEngine().get(\"kuid\")\r\n  });\r\n};\r\nKRUX.Provider.datalogix.run();\r\n</script>",
+   "freq_cap": 1,
+   "timing": "asap",
+   "id": 10121,
+   "tag_type": "provider"
+  },
+  {
+   "provider_id": 1,
+   "name": "Targus/AdAdvisor provider tag",
+   "format": "0x0",
+   "value": "None",
+   "method": "iframe",
+   "tier": 1,
+   "html": "<img src=\"http://adadvisor.net/adscores/g.js?sid=9212244187&_kdpid=911765d2-536f-4475-8fd5-92b73478fb8f\"/>",
+   "freq_cap": 1,
+   "timing": "asap",
+   "id": 10122,
+   "tag_type": "publisher"
+  },
+  {
+   "provider_id": 8,
+   "name": "DataLogix",
+   "format": "0x0",
+   "value": "0.00",
+   "method": "script",
+   "tier": 1,
+   "html": "<img src=\"http://services.krxd.net/um?r=http%3A%2F%2Fkrxd.nexac.com%2Fdlx.gif&pid=c325aa03-c0c2-498b-b0f1-74f62eb6f60f&pubid=c325aa03-c0c2-498b-b0f1-74f62eb6f60f&_kdpid=2dd640a6-6ebd-4d4f-af30-af8baa441a0d\"></img>",
+   "timing": "onload",
+   "id": 10129,
+   "tag_type": "publisher"
+  },
+  {
+   "provider_id": 11,
+   "name": "smart-exelate",
+   "format": "0x0",
+   "rules": [
+    {
+     "operator": "=",
+     "name": "country",
+     "value": "US"
+    }
+   ],
+   "value": "0.00",
+   "method": "script",
+   "tier": 1,
+   "html": "<script type=\"text/javascript\" src=\"http://loadus.exelator.com/load/?p=257&g=001&c=23706\"></script>",
+   "timing": "onload",
+   "id": 10136,
+   "tag_type": "publisher"
+  },
+  {
+   "provider_id": 1,
+   "name": "Targus",
+   "format": "0x0",
+   "value": "0.00",
+   "method": "script",
+   "tier": 1,
+   "html": "<img src=\"http://adadvisor.net/adscores/g.js?sid=9212244187&_kdpid=911765d2-536f-4475-8fd5-92b73478fb8f\"/>",
+   "freq_cap": 1,
+   "timing": "onload",
+   "id": 10138,
+   "tag_type": "publisher"
+  },
+  {
+   "template_definition": "{\r\n  \"host\": \"edge.quantserve.com\",\r\n  \"sslHost\": \"secure.quantserve.com\",\r\n  \"path\": \"/quant.js\",\r\n  \"params\": ['qacct'],\r\n  \"before\": function(params) {\r\n     window._qevents = window._qevents || [];\r\n     var accounts = params['qacct'].split(\",\"), events = [];\r\n     for (var i = 0; i < accounts.length; i++){\r\n          events.push({qacct:accounts[i]});\r\n      }\r\n     window._qevents.push(events);\r\n  }\r\n}",
+   "format": "0x0",
+   "value": "None",
+   "method": "script",
+   "tier": 2,
+   "params": {
+    "qacct": "p-berY5RRQGbf0c,p-b2zM4RvM9R-mA"
+   },
+   "timing": "asap",
+   "tag_type": "template",
+   "id": 73,
+   "name": "Quantcast"
+  },
+  {
+   "template_definition": "{\r\n  \"host\": \"tcr.tynt.com\",\r\n  \"path\": \"/ti.js\",\r\n  \"params\": ['account'],\r\n  \"before\": function(params) {\r\n      window.Tynt=window.Tynt||[];window.Tynt.push(params.account);\r\n\r\n  }\r\n}",
+   "format": "0x0",
+   "value": "None",
+   "method": "script",
+   "tier": 10,
+   "params": {
+    "account": "dWXft-9-yr34lhadbi-bpO"
+   },
+   "timing": "asap",
+   "tag_type": "template",
+   "id": 10081,
+   "name": "tynt w template"
+  },
+  {
+   "name": "Exelate",
+   "format": "0x0",
+   "rules": [
+    {
+     "operator": "=",
+     "name": "country",
+     "value": "US"
+    }
+   ],
+   "value": "None",
+   "method": "script",
+   "tier": 8,
+   "html": "<script type=\"text/javascript\" src=\"http://loadus.exelator.com/load/?p=257&g=001&c=23706\"></script>",
+   "timing": "onload",
+   "id": 110,
+   "tag_type": "publisher"
+  },
+  {
+   "name": "comScore",
+   "format": "0x0",
+   "value": "None",
+   "method": "script",
+   "tier": 10,
+   "html": "<script type=\"text/javascript\">\r\nvar _comscore = _comscore || [];\r\n_comscore.push({ c1: \"2\", c2: \"8430704\" });\r\n(function() { \r\nvar s = document.createElement(\"script\"), el = document.getElementsByTagName(\"script\")[0]; s.async = true; \r\ns.src = (document.location.protocol == \"https:\" ? \"https://sb\" : \"http://b\") + \".scorecardresearch.com/beacon.js\"; \r\nel.parentNode.insertBefore(s, el);\r\n})();\r\n</script>",
+   "timing": "onload",
+   "id": 74,
+   "tag_type": "publisher"
+  }
+ ],
+ "segments": [],
+ "published_at": "Mon Nov 14 21:17:23 2011",
+ "version": 75,
+ "params": {
+  "revenue_optimization": "GooglePublisher",
+  "site_level_supertag_config": "all",
+  "max_slot_time": "10000",
+  "capture_js_errors": true,
+  "capture_leakage": "Y",
+  "control_tag_stats_prefix": "brainyquote",
+  "control_tag_version": "5.6.x"
+ },
+ "msg": "Control Tag config for BrainyQuote",
+ "geo":{"COUNTRY":"IN", "REGION":"AP", "CITY":"HYDERABAD", "GEOREGION":"104", "DMA":"", "PMSA":"", "AREACODE":"", "COUNTY":"", "FIPS":"", "LATITUDE":"17.38", "LONGITUDE":"78.47", "TIMEZONE":"GMT 5.50", "ZIP":"", "CONTINENT":"AS"}
+});

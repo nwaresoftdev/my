@@ -1,0 +1,18 @@
+a:link			{text-decoration: none; color: #0000cc; line-height: normal} 
+a:visited		{text-decoration: none; color: #660099; line-height: normal}
+a:hover			{color: #FF9933; line-height: normal}
+a:active		{color: #FF9933; line-height: normal}
+h1				{font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11pt; font-weight: bold }
+hr				{color: #555555; border: 1px; height: 1px;  }
+.body			{font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt;}
+.bodybold		{font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; font-weight: bold }
+.small			{font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9px }
+.smallbold		{font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9px; font-weight: bold }
+.big			{font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11pt }
+.bigbold		{font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11pt; font-weight: bold }
+.huge			{font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 15pt }
+.hugebold		{font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 15pt; font-weight: bold }
+.bqline 		{border: 1px solid #000000; line-height:1;}
+.bqdash 		{border: 1px dotted #777777; line-height:1;}
+.bqtable 		{font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 15pt; color:#0000cc; border-width: 1px; border-color: #ffffff; border-collapse: collapse; }
+.bqtable td 	{border-width: 1px; padding: 5px; border-style: solid; border-color: #ffffff; background-color: #ffffff; text-align: center; }

@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="style.css" media="screen" />
+<%@page import="java.sql.*"%>
+<%
+String uname1=null,pwd1=null;
+String uname=request.getParameter("uname");
+String pwd=request.getParameter("pwd");
+try{
+//Class.forName("oracle.jdbc.driver.OracleDriver");
+//Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","blood","blood");
+  Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+	 Connection con=DriverManager.getConnection("jdbc:odbc:oradsn","blood","blood");
+System.out.println("connection created....");
+String s="select name,pwd from bd_login where name='"+uname+"' and pwd='"+pwd+"'";
+
+PreparedStatement pst=con.prepareStatement(s);
+ResultSet rs=pst.executeQuery();
+while(rs.next())
+	{
+	uname1=rs.getString(1);
+	pwd1=rs.getString(2);
+	System.out.println(uname1+pwd1);
+	}
+	if(uname.equals(uname1) && pwd.equals(pwd1))
+	{
+			session.setAttribute("user",uname1);			
+		 
+   out.println("<script>parent.location.href='link3.html'</script>");
+	}
+	else
+	{
+		%>
+		<head>
+<link rel="shortcut icon" type="image/png" href="images\NACL.png">
+<link rel="stylesheet" href="style.css" media="screen" />
+</head>
+<TITLE>Blood Donor Portal</TITLE>
+<body>
+<br><br><br>
+	<center>
+		<font color='red' font='arial' size='4'>
+			Sorry, Username and Password are Invalid.<br><br>
+			<a href='adminlogin.jsp'>ReLogin</a>
+		</font>
+	</center>
+</body>
+<%
+	}
+
+	rs.close();
+	pst.close();
+	con.close();
+}
+catch(Exception e)
+{
+	out.print(e);
+}
+
+	%>
+	

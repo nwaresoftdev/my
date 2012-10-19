@@ -1,0 +1,11 @@
+<HTML>
+<FRAMESET ROWS="20%,6%,*,6%" border="0" noresize>
+	<FRAME SRC="banner.jsp" NAME="f1" scrolling="no">
+	<FRAME SRC="center.jsp" NAME="f2" border="2" scrolling="no">
+	<FRAMESET COLS="10%,*" border="0" noresize>
+			<FRAME SRC="left1.jsp" NAME="f3" >
+			<FRAME SRC="AdminServices.html" NAME="f4">
+	</FRAMESET>
+	<FRAME SRC="lower.jsp" NAME="f1" scrolling="no">
+</FRAMESET>
+</HTML>

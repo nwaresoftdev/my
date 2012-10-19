@@ -1,0 +1,77 @@
+<link rel="stylesheet" href="style.css" media="screen" />
+<%@page import="java.sql.*"%>
+<%
+String uname1=null,pwd1=null,type=null,userid=null;
+String uid=request.getParameter("uname");
+String pwd=request.getParameter("pwd");
+try{
+//Class.forName("oracle.jdbc.driver.OracleDriver");
+//Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","blood","blood");
+  Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+	 Connection con=DriverManager.getConnection("jdbc:odbc:oradsn","blood","blood");
+System.out.println("connection created....");
+String s="select name,userid,pwd,type from bd_login where userid='"+uid+"' and pwd='"+pwd+"'";
+System.out.println(s);
+PreparedStatement pst=con.prepareStatement(s);
+ResultSet rs=pst.executeQuery();
+while(rs.next())
+	{
+	uname1=rs.getString(1);
+	userid=rs.getString(2);
+	pwd1=rs.getString(3);
+    type=rs.getString(4);
+	}
+	System.out.println("name..."+uname1);
+    System.out.println("id..."+userid);
+	System.out.println("pwd..."+pwd1);
+session.setAttribute("user",uname1);
+	System.out.println("type..."+type);
+	
+	if(uid.equals(userid) && pwd.equals(pwd1) && type.equals("bb"))
+	{   System.out.println("..................");
+		%>
+		<jsp:forward page="bbservices.jsp"/>
+		<%
+		
+	}
+    if(uid.equals(uname1) && pwd.equals(pwd1) && type.equals("hosp"))
+	{
+			%>
+		<jsp:forward page="hospservices.jsp"/>
+		<%
+	}
+	if(uid.equals(uname1) && pwd.equals(pwd1) && type.equals("clinic"))
+	{
+		%>
+		<jsp:forward page="clinicservices.jsp"/>
+		<%
+	}
+		else
+	{
+			%>
+			<head>
+<link rel="shortcut icon" type="image/png" href="images\NACL.png">
+<link rel="stylesheet" href="style.css" media="screen" />
+</head>
+<TITLE>Blood Donor Portal</TITLE>
+<body>
+<br><br><br>
+	<center>
+		<font color='red' font='arial' size='4'>
+			Sorry, Username and Password are Invalid.<br><br>
+			<a href='adminlogin.jsp'>ReLogin</a>
+		</font>
+	</center>
+</body>
+<%
+	}
+	rs.close();
+	pst.close();
+	con.close();
+}
+catch(Exception e)
+{
+	out.print(e);
+}
+
+	%>

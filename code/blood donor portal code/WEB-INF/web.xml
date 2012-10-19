@@ -1,0 +1,33 @@
+<web-app>
+	<servlet>
+		<servlet-name>nacl1</servlet-name>
+		<servlet-class>ConnectionImp</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>nacl1</servlet-name>
+		<url-pattern>/connection/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>nacl2</servlet-name>
+		<servlet-class>Controls</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>nacl2</servlet-name>
+		<url-pattern>/control/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>nacl3</servlet-name>
+		<servlet-class>UserValidation</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>nacl3</servlet-name>
+		<url-pattern>/uservalidations/*</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>/main.html</welcome-file>
+	</welcome-file-list>
+
+</web-app>

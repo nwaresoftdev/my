@@ -1,0 +1,54 @@
+<%
+   String city=request.getParameter("city");
+   String bg=request.getParameter("bg");
+   String state=(String)session.getAttribute("state");
+ System.out.println(" "+state+" "+city+" "+bg);
+ %>					   
+ <%@ page import="java.sql.*,java.util.*" %>
+ <table width=1024 height=45 border="1">
+ <tr><td>Donor Name</td><td>Donor Id</td><td>Gender</td><td>Mobile Num</td><td>Bgroup</td><td>State</td><td>City</td><td>Age</td><td>Weight</td><td>Last Donation Date</td><td>Mail</td></tr>
+  <% 
+   try
+   {   ArrayList al=new ArrayList();
+	   Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+	   Connection con=DriverManager.getConnection("jdbc:odbc:blood","blood","blood");
+     System.out.println("created...");
+        Statement st=con.createStatement();
+		Statement st1=con.createStatement();
+		String qry="select userid from bd_details where state='"+state+"'and city='"+city+"' and bgroup='"+bg+"'";
+		
+		System.out.println(qry);
+     ResultSet rs=st.executeQuery(qry);
+        while(rs.next())
+	   {    
+	    al.add(rs.getString(1));        
+       }  
+	        Iterator itr=al.iterator();
+	      while(itr.hasNext())
+	          {    
+			
+               String userid=itr.next().toString();
+			
+	   String qry2="select t1.userid,t1.name,t2.* from bd_login t1,bd_details t2 where t1.userid='"+userid+"'";
+	        ResultSet rs1=st1.executeQuery(qry2);
+                   while(rs1.next())
+					  {
+				   %>
+<tr><td><%=rs1.getString(1)%></td><td><%=rs1.getString(2)%></td><td><%=rs1.getString(4)%></td><td><%=rs1.getString(5)%> </td><td><%=rs1.getString(6)%></td><td><%=rs1.getString(7)%></td><td><%=rs1.getString(8)%></td><td><%=rs1.getString(9)%></td><td><%=rs1.getString(10)%></td><td><%=rs1.getString(11)%></td><td><%=rs1.getString(12)%></tr>
+                      <% }
+				  } %>
+				  </table>
+			  	   <%
+	   }
+   catch(Exception e)
+   {
+	   e.printStackTrace();
+   }
+   %>
+
+
+
+
+
+
+
